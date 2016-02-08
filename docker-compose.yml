@@ -1,0 +1,6 @@
+web:
+  image: druidcom/php-5.6-apache
+  ports:
+    - "80:80"
+  volumes:
+    - ./druiddocker:/druid
