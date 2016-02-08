@@ -17,7 +17,7 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
     && /usr/local/bin/composer --repository-url="https://raw.githubusercontent.com/dru-id/druid-php-skel/master" --dev create-project druid/php-skel /druid \
     && sed -i -- 's/Directory \/var\/www\//Directory \/druid\/src\/main\/php\//g' /etc/apache2/apache2.conf && sed -i -- 's/\/var\/www\/html/\/druid\/src\/main\/php\/webapp/g' /etc/apache2/apache2.conf
 
-WORKDIR /druid/src/main/php
+#WORKDIR /druid/src/main/php
 
 VOLUME /druid
 
