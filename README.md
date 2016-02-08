@@ -1,4 +1,12 @@
 # druid-php-docker
+
+This image is based on php:5.6-apache and contains the DRUID PHP SDK configured and ready for use.
+
+It is based on DRUID PHP SDK base project, available at (https://github.com/dru-id/druid-php-skel)
+
+
+
+
 Instructions
 
 Exec the following line
