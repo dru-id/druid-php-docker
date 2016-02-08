@@ -3,4 +3,4 @@ web:
   ports:
     - "80:80"
   volumes:
-    - ./druiddocker:/var/www
+    - ./src/main/php:/var/www
