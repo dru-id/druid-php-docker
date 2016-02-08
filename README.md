@@ -8,5 +8,5 @@ And then run
 
 `docker-compose up` 
 
-This will run [druidcom/php-5.6-apache](https://hub.docker.com/r/druidcom/php-5.6-apache/) the druidcom/php-5.6-apache image on your host machine
+This will run [druidcom/php-5.6-apache](https://hub.docker.com/r/druidcom/php-5.6-apache/) image on your host machine
 
