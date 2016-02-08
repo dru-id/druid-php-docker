@@ -14,11 +14,7 @@ RUN apt-get update && apt-get install -y \
 ADD php.ini $PHP_INI_DIR/conf.d/php.ini
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
-    && /usr/local/bin/composer --repository-url="https://raw.githubusercontent.com/dru-id/druid-php-skel/v1.0.0" --dev create-project druid/php-skel /druid \
-    && sed -i -- 's/Directory \/var\/www\//Directory \/druid\/src\/main\/php\//g' /etc/apache2/apache2.conf && sed -i -- 's/\/var\/www\/html/\/druid\/src\/main\/php\/webapp/g' /etc/apache2/apache2.conf \
-    && chown -R www-data:www-data /druid
-
-#WORKDIR /druid/src/main/php
-
-VOLUME /druid
-
+    && /usr/local/bin/composer --repository-url="https://raw.githubusercontent.com/dru-id/druid-php-skel/v1.0.0" --dev create-project druid/php-skel /usr/src/druid \
+    && cp -r /usr/src/druid/src/main/php/[abcdefghijklmopqrstuvxyz]* /var/www/ \
+    && cp -r /usr/src/druid/src/main/php/webapp /var/www/html \
+    && chown -R www-data:www-data /var/www/
