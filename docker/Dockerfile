@@ -16,7 +16,9 @@ ADD php.ini $PHP_INI_DIR/conf.d/php.ini
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
     && /usr/local/bin/composer --repository-url="https://raw.githubusercontent.com/dru-id/druid-php-skel/v1.0.0" --dev create-project druid/php-skel /usr/src/druid \
-    && sed -i -- 's/\/var\/www\/html/\/var\/www\/webapp/g' /etc/apache2/apache2.conf
+    && sed -i -- 's/\/var\/www\/html/\/var\/www\/webapp/g' /etc/apache2/apache2.conf \
+    && usermod -u 1000 www-data \
+    && usermod -G staff www-data
 
 ADD druid-ini.sh /usr/local/bin
 
