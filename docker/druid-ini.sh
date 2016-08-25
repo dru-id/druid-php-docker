@@ -11,7 +11,9 @@ if [ ! -d $DOCUMENT_ROOT ]; then
     echo "Setting owner and permissions"
     chown -R www-data:www-data $WEB_ROOT
     cp $SRC/composer.* $WEB_ROOT
+    echo "changing composer vendor-dir"
     sed -i -- 's/src\/main\/php\/lib\/vendor/lib\/vendor/g' $WEB_ROOT/composer.json
+    echo "vendor-dir changed to " && grep vendor-dir $WEB_ROOT/composer.json
 fi
 
 apache2-foreground
