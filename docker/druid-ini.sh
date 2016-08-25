@@ -10,6 +10,7 @@ if [ ! -d $DOCUMENT_ROOT ]; then
     (cd $WEB_SRC; tar cvf - .) | (cd $WEB_ROOT; tar xvf -)
     echo "Setting owner and permissions"
     chown -R www-data:www-data $WEB_ROOT
+    cp $SRC/composer.* $WEB_ROOT
 fi
 
 apache2-foreground
