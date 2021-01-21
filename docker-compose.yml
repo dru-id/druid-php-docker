@@ -1,5 +1,5 @@
 web:
-  image: druidcom/sdk-v1.0.5_php7.1_apache
+  image: druidcom/sdk-v1.0.6_php7.1_apache
   ports:
     - "80:80"
   volumes:
